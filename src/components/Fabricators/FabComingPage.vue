@@ -9,10 +9,12 @@
       <div class="d-flex justify-content-between container border-bottom py-2">
         <div class="d-flex">
           <div class="left">
-            <img :src="`${publicPath}${order.img}`" style="object-fit: cover; object-position: top; border-radius: 50px; width: 50px; height: 50px;" alt="">
+            <img :src="`${publicPath}${order.img}`"
+              style="object-fit: cover; object-position: top; border-radius: 50px; width: 50px; height: 50px;" alt="">
           </div>
           <div class=" ms-2">
-            <p class="m-0">{{ order.id }} | <span class="text-info"> <span class="fw-bold">Bal.</span> {{ bal(order) }}</span></p>
+            <p class="m-0">{{ order.id }} | <span class="text-info"> <span class="fw-bold">Bal.</span> {{ bal(order)
+            }}</span></p>
             <div class="m-0 text-success fw-bold">Coming : {{ order.requested }}
               <!-- <input class="text-success fw-bold" type="number" :value="order.requested" @input="this.cnum"
                 style="width: 50px; border: none;"> -->
@@ -34,8 +36,8 @@ import FabLink from './FabLink.vue';
 
 export default {
   components: { FabLink },
-  data(){
-    return{
+  data() {
+    return {
       publicPath: process.env.BASE_URL
     }
   },
@@ -46,7 +48,7 @@ export default {
       })
     }
   },
-  methods:{
+  methods: {
     bal(order) {
       return order.total - order.requested
     },
